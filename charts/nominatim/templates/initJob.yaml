@@ -49,8 +49,8 @@ spec:
               done
 
         - name: download
-          image: curlimages/curl
-          workingDir: /nominatim
+          image: {{ include "nominatim.curl.image" . }}
+          imagePullPolicy: {{ .Values.curl.image.pullPolicy | quote }}
           volumeMounts:
             - mountPath: /nominatim
               name: data

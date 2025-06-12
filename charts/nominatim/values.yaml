@@ -1185,3 +1185,13 @@ externalDatabase:
   ## @param externalDatabase.password External Database user password
   ##
   password: ""
+
+# Curl image
+curl:
+  image:
+    registry: docker.io
+    repository: curlimages/curl
+    tag: latest
+    digest: ""
+    pullPolicy: IfNotPresent
+

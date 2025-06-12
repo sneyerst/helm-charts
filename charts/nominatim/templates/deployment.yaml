@@ -79,7 +79,8 @@ spec:
       initContainers:
        {{- if .Values.nominatimUi.enabled }}
         - name: nominatim-ui-download
-          image: curlimages/curl
+          image: {{ include "nominatim.curl.image" . }}
+          imagePullPolicy: {{ .Values.curl.image.pullPolicy | quote }}
           command:
             - /bin/sh
           args:
